@@ -2,6 +2,9 @@ import * as styled from 'styled-components';
 export const GlobalStyle = styled.createGlobalStyle`
   html {
     font-size: 62.5%;
+    body {
+      margin: 0;
+    }
   }
 `;
 

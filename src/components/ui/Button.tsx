@@ -1,3 +1,4 @@
+'use client';
 import { GlobalTheme } from '@/style/theme';
 import styled from 'styled-components';
 
@@ -5,7 +6,7 @@ const Button = styled.button<{ color: GlobalTheme }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.6rem;
+  border-radius: 1.2rem;
   font-size: 1.4rem;
   line-height: 2rem;
   font-weight: 500;
@@ -38,11 +39,13 @@ const StyledButton = styled(Button)<ButtonProps<React.ElementType>>`
   ${(props) =>
     props.variant === 'default' &&
     `
-    background-color: ${props.color.background};
+    border:transparent;
+    background-color: ${props.color.primary};
     color: ${props.color.foreground};
     
     &:hover {
-      background-color: ${props.color[`background-transparent`]};
+      background-color: ${props.color['primary-transparent']};
+      color:${props.color['accent-foreground']}
     }
   `}
 

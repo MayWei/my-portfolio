@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
-const useActiveNav = (navIds: string[]): string => {
+const useActiveNav = (navIds: string[]): [string, Dispatch<SetStateAction<string>>] => {
   const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const useActiveNav = (navIds: string[]): string => {
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 0.1 }
     );
 
     navIds.forEach((navId) => {
@@ -23,9 +23,9 @@ const useActiveNav = (navIds: string[]): string => {
     });
 
     return () => observer.disconnect();
-  }, [navIds]);
+  }, [navIds, activeSection]);
 
-  return activeSection;
+  return [activeSection, setActiveSection];
 };
 
 export default useActiveNav;

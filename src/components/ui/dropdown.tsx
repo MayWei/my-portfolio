@@ -1,40 +1,11 @@
-import React, { FC } from 'react';
+'use client';
+import React, { FC, useMemo } from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { StyledButton } from './Button';
 import { useThemeChange } from '@/context/ThemeChangeProvider';
 import { Moon, Sun } from 'lucide-react';
 import styled from 'styled-components';
-import { GlobalTheme, Theme } from '@/style/theme';
-
-const StyledSun = styled(Sun)<{ color: Theme }>`
-  height: 1.9rem;
-  width: 1.9rem;
-  transition-property: all;
-  ${({ color }) =>
-    color.theme === 'dark'
-      ? `
-  rotate:-90dge;
-  scale:0;
-  `
-      : `  
-    rotate: 0deg;
-    scale: 1;`}
-`;
-const StyledMoon = styled(Moon)<{ color: Theme }>`
-  position: absolute;
-  height: 1.9rem;
-  width: 1.9rem;
-
-  transition-property: all;
-  ${({ color }) =>
-    color.theme === 'dark'
-      ? `
-  rotate:0dge;
-  scale:1;
-  `
-      : `  rotate: -90deg;
-  scale: 0;`}
-`;
+import { GlobalTheme } from '@/style/theme';
 
 type ContentProps = React.ComponentProps<typeof DropdownMenu.Content>;
 interface StyledContentProps extends ContentProps {
@@ -196,12 +167,40 @@ DropdownMenuItem.displayName = DropdownMenu.Item.displayName;
 
 export const Dropdown: FC<React.PropsWithChildren> = () => {
   const { colortheme, togglecolortheme } = useThemeChange();
+  const darkmode = useMemo(() => !!(colortheme.theme == 'dark'), [colortheme]);
+  const color = { color: colortheme.foreground };
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger>
+      <DropdownMenu.Trigger asChild>
         <StyledButton variant="outline" size="icon" color={colortheme}>
-          <StyledSun color={colortheme} />
-          <StyledMoon color={colortheme} />
+          <Sun
+            style={
+              colortheme.theme == 'dark'
+                ? { height: '1.9rem', width: '1.9rem', transition: 'all', scale: 0 }
+                : { height: '1.9rem', width: '1.9rem', transition: 'all', scale: 1 }
+            }
+          />
+          <Moon
+            style={
+              darkmode
+                ? {
+                    position: 'absolute',
+                    height: '1.9rem',
+                    width: '1.9rem',
+                    transition: 'all',
+                    scale: 1,
+                    ...color,
+                  }
+                : {
+                    position: 'absolute',
+                    height: '1.9rem',
+                    width: '1.9rem',
+                    transition: 'all',
+                    scale: 0,
+                    ...color,
+                  }
+            }
+          />
         </StyledButton>
       </DropdownMenu.Trigger>
       <DropdownMenuContent align="end">

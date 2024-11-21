@@ -8,6 +8,8 @@ export interface GlobalTheme {
   popover: string;
   'popover-foreground': string;
   primary: string;
+  'primary-transparent': string;
+  'primary-transparent-deeper': string;
   'primary-foreground': string;
   secondary: string;
   'secondary-transparent': string;
@@ -39,6 +41,8 @@ export const globalTheme: { light: GlobalTheme; dark: GlobalTheme } = {
     popover: 'hsl(0, 0%, 100%)',
     'popover-foreground': 'hsl(222.2, 50%, 10%)',
     primary: 'hsl(221.2, 83.2%, 53.3%)',
+    'primary-transparent': 'hsl(221.2, 83.2%, 53.3%,0.9)',
+    'primary-transparent-deeper': 'hsl(221.2, 83.2%, 53.3%,0.8)',
     'primary-foreground': 'hsl(210, 40%, 98%)',
     secondary: 'hsl(210, 40%, 96.1%)',
     'secondary-transparent': 'hsl(210, 40%, 96.1%,0.8)',
@@ -65,6 +69,8 @@ export const globalTheme: { light: GlobalTheme; dark: GlobalTheme } = {
     popover: 'hsl(222.2, 50%, 10%)',
     'popover-foreground': 'hsl(210, 40%, 98%)',
     primary: 'hsl(217.2, 91.2%, 59.8%)',
+    'primary-transparent': 'hsl(221.2, 83.2%, 53.3%,0.9)',
+    'primary-transparent-deeper': 'hsl(221.2, 83.2%, 53.3%,0.8)',
     'primary-foreground': 'hsl(222.2, 47.4%, 11.2%)',
     secondary: 'hsl(217.2, 32.6%, 17.5%)',
     'secondary-transparent': 'hsl(217.2, 32.6%, 17.5%,0.8)',

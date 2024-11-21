@@ -17,14 +17,16 @@ interface NavigationItem {
 const StyledContainer = styled.header`
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   @media ${(props) => props.theme.breakpoints.lg} {
     position: sticky;
     top: 0;
     height: 100vh;
+    max-height: 100vh;
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1.6rem;
     padding: 9.6rem 0;
   }
@@ -70,6 +72,7 @@ const StyledNav = styled.nav`
 const StyledUl = styled.ul`
   display: flex;
   flex-direction: column;
+  list-style-type: none;
   width: max-content;
   text-align: start;
   gap: 2.4rem;
@@ -91,6 +94,7 @@ const StyledLi = styled.li<{ color: GlobalTheme }>`
   }
 `;
 const StyledIndicator = styled.span<{ color: GlobalTheme; active: boolean }>`
+  display: inline-block;
   margin-right: 1.6rem;
   height: 0.1rem;
   width: 3.2rem;
@@ -109,24 +113,16 @@ const StyledText = styled.span<{ active: boolean; color: GlobalTheme }>`
 `;
 const StyledIconContainer = styled.ul`
   display: flex;
-  flex-direction: row;
   gap: 2.4rem;
   margin-top: 2.4rem;
   @media ${(props) => props.theme.breakpoints.lg} {
     margin-top: 0;
   }
 `;
-// const StyledGithub = styled(Github)`
-//   width: 1.9rem;
-//   height: 1.9rem;
-// `;
-// const StyledLinkedIn = styled(LinkedIn)`
-//   width: 1.9rem;
-//   height: 1.9rem;
-// `;
-const GithubComp = () => (
+const GithubComp = ({ fill }: { fill: string }) => (
   <svg
     role="img"
+    fill={fill}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     width="1.9rem"
@@ -152,7 +148,7 @@ const LinkedInComp = () => (
   </svg>
 );
 export default function Navigation() {
-  const activeSection = useActiveNav(['about', 'experience', 'projects', 'contact']);
+  const [activeSection] = useActiveNav(['about', 'experience', 'projects', 'contact']);
   const navigationItems: NavigationItem[] = [
     {
       name: 'About',
@@ -165,7 +161,7 @@ export default function Navigation() {
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
-  const isNavActive = useCallback((navId: string) => navId === activeSection, [activeSection]);
+  const isNavActive = useCallback((navId: string) => !!(navId === activeSection), [activeSection]);
   const { colortheme } = useThemeChange();
   return (
     <StyledContainer>
@@ -183,7 +179,7 @@ export default function Navigation() {
             const active = isNavActive(href.substring(1));
             return (
               <StyledLi key={name} color={colortheme}>
-                <a href={href} style={{ padding: '1.2rem 0' }}>
+                <a href={href} style={{ padding: '1.2rem 0', textDecoration: 'none' }}>
                   <StyledIndicator
                     color={colortheme}
                     active={active}
@@ -201,7 +197,7 @@ export default function Navigation() {
       <StyledIconContainer>
         <StyledButton variant="outline" size="icon" color={colortheme}>
           <a href="https://github.com/MayWei" target="_blank" rel="noopener noreferrer">
-            <GithubComp />
+            <GithubComp fill={colortheme['foreground']} />
           </a>
         </StyledButton>
         <StyledButton variant="outline" size="icon" color={colortheme}>

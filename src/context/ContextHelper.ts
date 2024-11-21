@@ -1,3 +1,4 @@
+'use client';
 import { createContext, useContext, Context } from 'react';
 
 const defaultValue = Symbol('context default value');

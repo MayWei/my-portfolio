@@ -15,35 +15,53 @@ import { CardHeader } from '../ui/card';
 import Image from 'next/image';
 import { MoveUpRight } from 'lucide-react';
 import { Badge } from '../ui/badge';
+import cashupImage from '@/assets/Cashup.png';
+import { GlobalTheme } from '@/style/theme';
+import { useMemo } from 'react';
+// import saleslineImage from '@/assets/Salesline.png';
 
 const ProjectsData = [
   {
-    imagePath: '/swoop-og-banner.webp',
-    title: 'Swoop Exchange - Landing Page',
+    imagePath: '../../assets/Cashup.png',
+    title: 'Cashup - Application',
     description:
-      "Swoop's landing page highlights the platform's use cases and solutions. Swoop Exchange is a Meta-DEX Aggregator that automatically sources, ranks and routes quotes from the best DEX Aggregators and Bridges, ensuring the best prices for on-chain and cross-chain swaps. Swoop Exchange has achieved millions in USD volume and currently has around 4000 monthly users with 0 paid marketing.",
-    skills: ['Next.js', 'Framer', 'Shadcn/ui', 'Typescript', 'JavaScript', 'Vercel', 'Figma'],
-    link: 'https://swoop.exchange',
+      'Cashup is automated Daily Taking Sheet (DTS) which streamlining operation in hospitality industry and improving user experience',
+    skills: [
+      'Typescript',
+      'Styled-components',
+      'React',
+      'React-native',
+      'GraphQL',
+      'Netlify',
+      'GCP',
+      'Jest',
+      'Figma',
+      'Django',
+      'Python',
+      'Bitbucket',
+    ],
+    link: 'https://cashup.quantaco.co',
   },
   {
-    imagePath: '/app-front-1.png',
-    title: 'Swoop Exchange - Application',
+    imagePath: '../../assets/Salesline.png',
+    title: 'Salesline - Application',
     description:
-      'Swoop Exchange is a next generation Meta Decentralized Exchange and Bridge Aggregator. By Aggregating the Aggregators, Bridges, and Liquidity across chains, and off-chain it solves protocol and liquidity fragmentation, significantly improving UX. Provides access to: 450,000+ Tokens, 7+ Aggregators, 13+ Bridges, 50+ DEXs, 280+ Liquidity Sources and 16+ Blockchains.',
-    skills: ['Next.js', 'Typescript', 'JavaScript', 'MUI', 'Tailwind CSS', 'Vercel', 'Figma'],
-    link: 'https://app.mtopswap.com',
+      'Salesline is an analytical product to help hospitality venues understand trends in their business activities and optimize the efficiency of staff costs and sales, driving data-driven decision-making.',
+    skills: ['Next.js', 'Typescript', 'Antd', 'Netlify', 'Figma'],
+    link: 'https://salesline.quantaco.co',
   },
   {
     imagePath: '/meikopoulos.com_PC.png',
-    title: 'meikopoulos.com',
+    title: 'Prospa',
     description:
-      "The portfolio webpage you are looking at right now. Based on Brittany Chiang's website (they awesome). Coded in Visual Studio Code.",
-    skills: ['Typescript', 'JavaScript', 'Tailwind CSS', 'Vercel'],
-    link: 'https://github.com/0xAlexander/my-website',
+      'Prospa is a bank account and loan management app, which implements all the common features including adding funds, bank transactions, loans, payees management',
+    skills: ['React', 'React Native', 'Nodejs', 'GraphQL', 'Jest', 'Storybook', 'AWS'],
+    link: 'https://online.prospa.com',
   },
 ];
 
 export const StyledLink = styled.a`
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
@@ -64,25 +82,39 @@ const StyledContentContainer = styled.div`
     width: 67%;
   }
 `;
+const StyledImage = styled(Image)<{ color: GlobalTheme }>`
+  background-color: #141414;
+  margin-top: 0.8rem;
+  border: 1 solid;
+  border-color: ${(props) => props.color['muted-foreground']};
+  border-radius: 0.8rem;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  max-width: 100%;
+  box-sizing: border-box;
+`;
 export default function Projects() {
   const { colortheme } = useThemeChange();
+  const darkmode = useMemo(() => !!(colortheme.theme == 'dark'), [colortheme]);
   return (
     <StyledSection id="projects">
       <StyledTitle>
-        <H2>EXPERIENCE</H2>
+        <H2>Projects</H2>
       </StyledTitle>
       <>
         {ProjectsData.map((project, index) => (
           <StyledLink key={index} href={project.link} target="_blank" rel="noopener noreferrer">
-            <StyledCard key={index} darkmode={true} color={colortheme}>
+            <StyledCard key={index} darkmode={darkmode} color={colortheme}>
               <StyledCardHeader>
-                <Image
-                  src={project.imagePath}
+                <StyledImage
+                  src={cashupImage}
                   alt={`Screenshot of ${project.title}`}
                   width={1920}
                   height={1080}
                   priority
-                  className="bg-[#141414] mt-2 border border-muted-foreground rounded-[0.5rem]"
+                  color={colortheme}
                 />
               </StyledCardHeader>
               <StyledContentContainer>
@@ -93,7 +125,9 @@ export default function Projects() {
                 <StyledDescription color={colortheme}>{project.description}</StyledDescription>
                 <StyledFooter>
                   {project.skills.map((skill, index) => (
-                    <Badge key={index}>{skill}</Badge>
+                    <Badge key={index} color={colortheme}>
+                      {skill}
+                    </Badge>
                   ))}
                 </StyledFooter>
               </StyledContentContainer>

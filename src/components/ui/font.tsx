@@ -1,3 +1,4 @@
+'use client';
 import { GlobalTheme } from '@/style/theme';
 import styled from 'styled-components';
 

@@ -4,14 +4,18 @@ import Contact from '@/components/container/Contact';
 import { ExpComponent } from '@/components/container/Experience';
 import Navigation from '@/components/container/Navigation';
 import Projects from '@/components/container/Projects';
+import { useThemeChange } from '@/context/ThemeChangeProvider';
+import { GlobalTheme } from '@/style/theme';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import styled from 'styled-components';
-const StyledContainer = styled.div`
-  margin: auto;
+const StyledContainer = styled.div<{ color: GlobalTheme }>`
+  margin: 0 auto;
   min-height: 100vh;
   max-width: ${(props) => props.theme.breakpoints.xl};
   padding: 4.8rem 2.4rem;
+  background-color: ${({ color }) => color.background};
+  color: ${({ color }) => color.foreground};
   @media ${(props) => props.theme.breakpoints.md} {
     padding: 8rem 4.8rem;
   }
@@ -35,6 +39,7 @@ const StyledMain = styled.main`
   }
 `;
 export default function Page() {
+  const { colortheme } = useThemeChange();
   return (
     <>
       <Head>
@@ -44,7 +49,7 @@ export default function Page() {
           }
         `}</style>
       </Head>
-      <StyledContainer>
+      <StyledContainer color={colortheme}>
         <Navigation />
         <StyledMain>
           <About />

@@ -1,6 +1,8 @@
+'use client';
+import { GlobalTheme } from '@/style/theme';
 import styled from 'styled-components';
 
-export const Badge = styled.div`
+export const Badge = styled.div<{ color: GlobalTheme }>`
   display: inline-flex;
   align-items: center;
   border-radius: 9999px;
@@ -15,10 +17,10 @@ export const Badge = styled.div`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   border-color: transparent;
-  background-color: hsl(221.2, 83.2%, 53.3%);
-  color: hsl(210, 40%, 98%);
+  background-color: ${({ color }) => color.primary};
+  color: ${({ color }) => color['primary-foreground']};
   &:hover {
-    background-color: hsl(221.2, 83.2%, 80%);
+    background-color: ${({ color }) => color['primary-transparent-deeper']};
   }
   &:focus {
     outline: none;
