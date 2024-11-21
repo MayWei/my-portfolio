@@ -48,6 +48,7 @@ export default function Page() {
             font-family: '${inter.style.fontFamily}';
           }
         `}</style>
+        <title>Linda</title>
       </Head>
       <StyledContainer color={colortheme}>
         <Navigation />

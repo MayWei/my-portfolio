@@ -1,14 +1,12 @@
 'use client';
 
 import styled from 'styled-components';
-import { H2 } from '../ui/font';
 import {
   StyledCard,
   StyledContent,
   StyledDescription,
   StyledFooter,
   StyledSection,
-  StyledTitle,
 } from './Experience';
 import { useThemeChange } from '@/context/ThemeChangeProvider';
 import { CardHeader } from '../ui/card';
@@ -18,6 +16,7 @@ import { Badge } from '../ui/badge';
 import cashupImage from '@/assets/Cashup.png';
 import { GlobalTheme } from '@/style/theme';
 import { useMemo } from 'react';
+import { StyledH2, StyledTitle } from './About';
 // import saleslineImage from '@/assets/Salesline.png';
 
 const ProjectsData = [
@@ -100,8 +99,8 @@ export default function Projects() {
   const darkmode = useMemo(() => !!(colortheme.theme == 'dark'), [colortheme]);
   return (
     <StyledSection id="projects">
-      <StyledTitle>
-        <H2>Projects</H2>
+      <StyledTitle color={colortheme}>
+        <StyledH2>Projects</StyledH2>
       </StyledTitle>
       <>
         {ProjectsData.map((project, index) => (

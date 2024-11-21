@@ -8,7 +8,7 @@ const StyledSection = styled.section`
   scroll-margin-top: 6.4rem;
 `;
 
-const StyledTitle = styled.div<{ color: GlobalTheme }>`
+export const StyledTitle = styled.div<{ color: GlobalTheme }>`
   position: sticky;
   top: 0;
   z-index: 20;
@@ -16,7 +16,7 @@ const StyledTitle = styled.div<{ color: GlobalTheme }>`
   width: 100vw;
   background-color: ${({ color }) => color['background-full-transparent']};
   padding: 2rem 2.4rem;
-  backdrop-filter: blur();
+  backdrop-filter: blur(10px);
   @media ${(props) => props.theme.breakpoints.md} {
     margin-left: -4.8rem;
     margin-right: -4.8rem;
@@ -39,13 +39,13 @@ const StyledTitle = styled.div<{ color: GlobalTheme }>`
     opacity: 0;
   }
 `;
-const StyledH2 = styled.h2`
+export const StyledH2 = styled.h2`
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 
-  @media (min-width: 1024px) {
+  @media ${(props) => props.theme.breakpoints.lg} {
     position: absolute;
     width: 1px;
     height: 1px;

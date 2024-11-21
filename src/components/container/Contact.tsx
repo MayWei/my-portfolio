@@ -3,13 +3,13 @@
 import { Mail } from 'lucide-react';
 import { StyledButton } from '../ui/Button';
 import { useThemeChange } from '@/context/ThemeChangeProvider';
-import { StyledDescription, StyledSection, StyledTitle } from './Experience';
-import { H2 } from '../ui/font';
+import { StyledDescription, StyledSection } from './Experience';
 import styled from 'styled-components';
 import { StyledLink } from './Projects';
 import { GlobalTheme } from '@/style/theme';
 import { useMemo, useRef, useState } from 'react';
 import { Modal } from '../ui/Modal';
+import { StyledTitle, StyledH2 as StyledH2Sticky } from './About';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -54,8 +54,8 @@ export default function Contact() {
   const videoRef = useRef<HTMLVideoElement>(null);
   return (
     <StyledSection id="contact">
-      <StyledTitle>
-        <H2>Get In Touch</H2>
+      <StyledTitle color={colortheme}>
+        <StyledH2Sticky>Get In Touch</StyledH2Sticky>
       </StyledTitle>
 
       <StyledContainer>

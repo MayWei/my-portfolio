@@ -1,12 +1,13 @@
 'use client';
 
 import styled from 'styled-components';
-import { H2, P } from '../ui/font';
+import { P } from '../ui/font';
 import { Card, CardHeader } from '../ui/card';
 import { useThemeChange } from '@/context/ThemeChangeProvider';
 import { Badge } from '../ui/badge';
 import { GlobalTheme } from '@/style/theme';
 import { useMemo } from 'react';
+import { StyledH2, StyledTitle } from './About';
 interface EXPERIENCE {
   timeline: string;
   position: string;
@@ -20,25 +21,25 @@ export const StyledSection = styled.section`
     margin-top: 6.4rem;
   }
 `;
-export const StyledTitle = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  margin: 0 -2.4rem 1rem -2.4rem;
-  width: 100vw;
-  background-color: hsl(0 0% 100% 0);
-  backdrop-filter: blur();
-  padding: 2.4rem 2rem;
-  @media ${(props) => props.theme.breakpoints.lg} {
-    position: relative;
-    top: auto;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    opacity: 0;
-    display: none;
-  }
-`;
+// const StyledTitle = styled.div`
+//   position: sticky;
+//   top: 0;
+//   z-index: 20;
+//   margin: 0 -2.4rem 1rem -2.4rem;
+//   width: 100vw;
+//   background-color: hsl(0 0% 100% 0);
+//   backdrop-filter: blur();
+//   padding: 2.4rem 2rem;
+//   @media ${(props) => props.theme.breakpoints.lg} {
+//     position: relative;
+//     top: auto;
+//     margin: 0 auto;
+//     padding: 0;
+//     width: 100%;
+//     opacity: 0;
+//     display: none;
+//   }
+// `;
 export const StyledCard = styled(Card)<{ darkmode: boolean }>`
   margin-bottom: 1.6rem;
   display: flex;
@@ -138,8 +139,8 @@ export const ExpComponent = () => {
   const darkmode = useMemo(() => !!(colortheme.theme == 'dark'), [colortheme]);
   return (
     <StyledSection id="experience">
-      <StyledTitle>
-        <H2>EXPERIENCE</H2>
+      <StyledTitle color={colortheme}>
+        <StyledH2>EXPERIENCE</StyledH2>
       </StyledTitle>
       <>
         {Experience.map(({ timeline, position, company, responsibility, skills }, index) => (
