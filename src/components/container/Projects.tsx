@@ -50,7 +50,7 @@ const ProjectsData = [
     link: 'https://salesline.quantaco.co',
   },
   {
-    imagePath: '/meikopoulos.com_PC.png',
+    imagePath: '../../assets/Salesline.png',
     title: 'Prospa',
     description:
       'Prospa is a bank account and loan management app, which implements all the common features including adding funds, bank transactions, loans, payees management',
