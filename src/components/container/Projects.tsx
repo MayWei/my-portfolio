@@ -24,7 +24,7 @@ const ProjectsData = [
     imagePath: '../../assets/Cashup.png',
     title: 'Cashup - Application',
     description:
-      'Cashup is automated Daily Taking Sheet (DTS) which streamlining operation in hospitality industry and improving user experience',
+      'Cashup is a digital platform to enter trading activities across different revenue locations and cash movement through the venues',
     skills: [
       'Typescript',
       'Styled-components',
@@ -39,7 +39,7 @@ const ProjectsData = [
       'Python',
       'Bitbucket',
     ],
-    link: 'https://cashup.quantaco.co',
+    link: 'https://www.quantaco.co/cashup/',
   },
   {
     imagePath: '../../assets/Salesline.png',
@@ -47,13 +47,13 @@ const ProjectsData = [
     description:
       'Salesline is an analytical product to help hospitality venues understand trends in their business activities and optimize the efficiency of staff costs and sales, driving data-driven decision-making.',
     skills: ['Next.js', 'Typescript', 'Antd', 'Netlify', 'Figma'],
-    link: 'https://salesline.quantaco.co',
+    link: 'https://www.quantaco.co/salesline/',
   },
   {
     imagePath: '../../assets/Salesline.png',
     title: 'Prospa',
     description:
-      'Prospa is a bank account and loan management app, which implements all the common features including adding funds, bank transactions, loans, payees management',
+      'Prospa is a small business loan management app, which implements all the common features including adding funds, bank transactions, loan management, payees management',
     skills: ['React', 'React Native', 'Nodejs', 'GraphQL', 'Jest', 'Storybook', 'AWS'],
     link: 'https://online.prospa.com',
   },
@@ -94,6 +94,7 @@ const StyledImage = styled(Image)<{ color: GlobalTheme }>`
   max-width: 100%;
   box-sizing: border-box;
 `;
+
 export default function Projects() {
   const { colortheme } = useThemeChange();
   const darkmode = useMemo(() => !!(colortheme.theme == 'dark'), [colortheme]);

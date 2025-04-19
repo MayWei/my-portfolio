@@ -97,8 +97,8 @@ export const StyledFooter = styled.div`
 `;
 const Experience: EXPERIENCE[] = [
   {
-    timeline: 'Oct 2022 — Present',
-    position: 'Senior Frontend developer',
+    timeline: 'Oct 2022 — Dec 2024',
+    position: 'Senior Software Engineer',
     company: 'Quantaco(part of PKF)',
     responsibility:
       'Spearheaded the development of the Frontend, utilizing React Native and ReactJS, built an automated Daily Taking Sheet (DTS), and a analytical product to help hospitality venues understand trends in their business activities and optimize the efficiency of staff costs and sale. Architected and built products from scratch, adhering to Test-Driven Development (TDD) principles. Configured CI/CD pipelines with Bitbucket, facilitating rapid development',
@@ -108,17 +108,17 @@ const Experience: EXPERIENCE[] = [
       'React',
       'React-native',
       'GraphQL',
-      'Netlify',
       'GCP',
       'Jest',
       'Django',
       'Python',
       'Bitbucket',
+      'PostgreSQL',
     ],
   },
   {
-    timeline: 'Jan 2022 — Oct 2022',
-    position: 'Frontend developer',
+    timeline: 'Aug 2021 — Oct 2022',
+    position: 'Software engineer',
     company: 'Basepair',
     responsibility:
       'Developed an bank account and loan management app for Prospa with React Native and ReactJS,Adhering to Test-Driven Development (TDD) principles,Utilized a diverse set of technologies to deliver versatile and scalable solutions ',
@@ -126,11 +126,19 @@ const Experience: EXPERIENCE[] = [
   },
   {
     timeline: 'Jan 2021 - Dec 2021',
-    position: 'Frontend developer',
+    position: 'software developer',
     company: 'Newscorps',
     responsibility:
       'Developed a new website(codesports),Implemented a set of new features for the News Corps website with  Vanilla Javascript',
     skills: ['HTML', 'CSS', 'SCSS', 'Vanilla Javascript'],
+  },
+  {
+    timeline: 'July 2006 - Sep 2019',
+    position: 'Senior Software Engineer',
+    company: 'Huawei',
+    responsibility:
+      'Utilizing Vue/nodejs/mysql developed a e-commance website Utilizing Vue/nodejs/Mangodb pioneered a recruitment app, streamlining the recruiting process for stakeholders(applicants/Hr/interviewers)Developed the AS and NAS layer of 2G/3G/4G wireless SoC solution for mobile phone and modem(predecessor of Huawei Kirin SoC solution language:C/C++)',
+    skills: ['Vue', 'Antd', 'nodejs', 'express', 'mangodb'],
   },
 ];
 
