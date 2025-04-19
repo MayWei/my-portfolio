@@ -122,7 +122,7 @@ const Experience: EXPERIENCE[] = [
     position: 'Software engineer',
     company: 'Basepair',
     responsibility:
-      'Developed an bank account and loan management app for Prospa with React Native and ReactJS,Adhering to Test-Driven Development (TDD) principles,Utilized a diverse set of technologies to deliver versatile and scalable solutions ',
+      'Developed an small business loan management app for Prospa with React Native and ReactJS,Adhering to Test-Driven Development (TDD) principles,Utilized a diverse set of technologies to deliver versatile and scalable solutions ',
     skills: ['ReactJS', 'React Native', 'GraphQL', 'Storybook', 'Jest', 'AWS', 'Nodejs'],
   },
   {
@@ -137,8 +137,7 @@ const Experience: EXPERIENCE[] = [
     timeline: 'July 2006 - Sep 2019',
     position: 'Senior Software Engineer',
     company: 'Huawei',
-    responsibility:
-      'Utilizing Vue/nodejs/mysql developed a e-commance website Utilizing Vue/nodejs/Mangodb pioneered a recruitment app, streamlining the recruiting process for stakeholders(applicants/Hr/interviewers)Developed the AS and NAS layer of 2G/3G/4G wireless SoC solution for mobile phone and modem(predecessor of Huawei Kirin SoC solution language:C/C++)',
+    responsibility: `Utilizing Vue/nodejs/mysql developed a e-commance website. \nUtilizing Vue/nodejs/Mangodb pioneered a recruitment app, streamlining the recruiting process for stakeholders(applicants/Hr/interviewers) \nDeveloped the AS and NAS layer of 2G/3G/4G wireless SoC solution for mobile phone and modem(predecessor of Huawei Kirin SoC solution language:C/C++)`,
     skills: ['Vue', 'Antd', 'nodejs', 'express', 'mangodb'],
   },
 ];
