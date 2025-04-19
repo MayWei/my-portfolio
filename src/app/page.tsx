@@ -9,7 +9,7 @@ import { GlobalTheme } from '@/style/theme';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import styled from 'styled-components';
-const StyledContainer = styled.div<{ color: Global Theme }>`
+const StyledContainer = styled.div<{ color: GlobalTheme }>`
   margin: 0 auto;
   min-height: 100vh;
   max-width: ${(props) => props.theme.breakpoints.xl};

@@ -105,28 +105,30 @@ export const About: FC = () => {
       </StyledTitle>
       <StyledContent>
         <StyledContentItem color={colortheme}>
-          Hi there! I&#39;m Linda, a frontend-focused software engineer based in Sydney, Australia,
-          with a strong grasp of backend technologies to complement my core expertise.
+          Hi there! I&#39;m Linda, a senior software engineer based in Sydney, Australia, with a
+          strong grasp of both frontend and backend technologies to complement my core expertise.
         </StyledContentItem>
         <StyledContentItem color={colortheme}>
-          As a frontend-centric engineer, I excel at understanding the underlying systems to create
-          top-notch frontend applications. Although my primary focus lies in frontend development,
-          my backend knowledge enables me to bridge the gap and ensure a holistic approach to
-          software engineering
+          As a senior software engineer engineer, I excel at understanding the underlying systems to
+          create top-notch web and mobile applications. I worked more than 15 years experiences as
+          software engineer in industries across hospitality, financial, e-commerce and
+          semiconductor, and many successful commercial projects.
         </StyledContentItem>
         <StyledContentItem color={colortheme}>
           Here are a few technologies I&#39;ve been working with recently:
         </StyledContentItem>
         <StyledSkills>
           <SkillsList>Typescript</SkillsList>
+          <SkillsList>Node.js</SkillsList>
+          <SkillsList>NextJS</SkillsList>
+          <SkillsList>Python</SkillsList>
           <SkillsList>React (ES6+) & React Native</SkillsList>
           <SkillsList>GraphQL</SkillsList>
           <SkillsList>AWS & GCP</SkillsList>
           <SkillsList>SQL</SkillsList>
           <SkillsList>HTML5 & CSS</SkillsList>
-          <SkillsList>Node.js</SkillsList>
-          <SkillsList>NextJS</SkillsList>
-          <SkillsList>Python</SkillsList>
+          <SkillsList>Express</SkillsList>
+          <SkillsList>Django</SkillsList>
         </StyledSkills>
       </StyledContent>
     </StyledSection>

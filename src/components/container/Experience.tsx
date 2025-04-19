@@ -100,8 +100,9 @@ const Experience: EXPERIENCE[] = [
     timeline: 'Oct 2022 — Dec 2024',
     position: 'Senior Software Engineer',
     company: 'Quantaco(part of PKF)',
-    responsibility:
-      'Spearheaded the development of the Frontend, utilizing React Native and ReactJS, built an automated Daily Taking Sheet (DTS), and a analytical product to help hospitality venues understand trends in their business activities and optimize the efficiency of staff costs and sale. Architected and built products from scratch, adhering to Test-Driven Development (TDD) principles. Configured CI/CD pipelines with Bitbucket, facilitating rapid development',
+    responsibility: `Utilizing React Native and ReactJS, built an automated Daily Taking Sheet (DTS), and a analytical product to help hospitality venues understand trends in their business activities and optimize the efficiency of staff costs and sale. 
+    \nArchitected and built products from scratch, adhering to Test-Driven Development (TDD) principles. 
+    \nConfigured CI/CD pipelines with Bitbucket, facilitating rapid development`,
     skills: [
       'Typescript',
       'Styled-components',
