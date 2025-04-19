@@ -167,7 +167,7 @@ export default function Navigation() {
     <StyledContainer>
       <StyledHeroContainer>
         <StyledH1>Hi, I&#39;m Linda 👋</StyledH1>
-        <StyledH2> Senior Frontend developer</StyledH2>
+        <StyledH2> Senior Software engineer</StyledH2>
         <StyledP color={colortheme}>
           {' '}
           I build user-first, captivating applications and provide seemless user experience
